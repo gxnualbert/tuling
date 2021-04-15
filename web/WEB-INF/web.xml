@@ -41,14 +41,14 @@
 
     <!--配置编码过滤器 CharacterEncodingFilter 解决中文POST乱码问题 一定要写在所有过滤器前面-->
     <filter>
-        <filter-name>characterEncodingFilter</filter-name>
+        <filter-name>characterEncodingFilter</filter-name> <!--filter-name 名字可以随意取 -->
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <!--encoding 编码格式-->
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
-        <!-- 同时开启请求和响应的编码设置-->
+        <!-- 同时开启请求和响应的编码设置： 可以点进上面的 CharacterEncodingFilter 查看源码 -->
         <init-param>
             <param-name>forceEncoding</param-name>
             <param-value>true</param-value>
@@ -57,9 +57,9 @@
     <!--配置拦截哪些请求进行过滤-->
     <filter-mapping>
         <filter-name>characterEncodingFilter</filter-name>
-        <!--拦截规则-->
-        <!--<url-pattern></url-pattern>  根据url请求进行匹配  *
-            <servlet-name>  具体制定过滤哪个servlet
+        <!--拦截规则 有以下两种-->
+        <!--第一种拦截规则<url-pattern></url-pattern>  根据url请求进行匹配  *
+           第二种拦截规则 <servlet-name>  具体制定过滤哪个servlet
         -->
         <servlet-name>springmvc</servlet-name>
     </filter-mapping>

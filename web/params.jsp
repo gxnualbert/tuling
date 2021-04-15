@@ -16,7 +16,8 @@
 <form action="${pageContext.request.contextPath}/params03" method="post" enctype="multipart/form-data">
 姓名：<input name="name" type="text"> <p></p>
     <input type="submit" value="提交">
-
+    pageContext.request.contextPath：表示是动态获取地址，跟前端请求的一致：http://localhost:8080/springmvc/params.jsp
+    如果不用pageContext.request.contextPath，直接写/params01,会报404错误！！
 </form>
 
 <h2>复杂类型参数演示--List<User></h2>
