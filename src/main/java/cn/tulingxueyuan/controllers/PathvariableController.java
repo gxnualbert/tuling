@@ -32,10 +32,13 @@ public class PathvariableController {
         System.out.println(name);
         return "/index.jsp";
     }
-
+    // 访问地址：http://localhost:8080/springmvc/path/user/124453/albertsdfasdf
     @RequestMapping("/user02/{id}/{name}")
     public String path02(User user){
         System.out.println(user);
+        /**
+         * 如果是javaBean可以省略@PathVariable，要保证占位符的名字和javaBean的属性名字一样
+         */
         return "/index.jsp";
     }
 }
